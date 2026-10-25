@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <!--  经过测试，目前屏幕宽度345px以上页面能比较美观地展示  -->
+    <!--  经过测试，目前屏幕宽度340px以上页面能比较美观地展示  -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Fjalla+One&display=swap"
@@ -179,9 +179,9 @@
         }
 
         #topics .section-title,
-        #submissions .section-title,
-        #speakers .section-title,
-        #members .section-title {
+        #dates .section-title,
+        #program .section-title,
+        #organizers .section-title {
             background: #0e0e0e;
             color: #ffffff;
         }
@@ -211,6 +211,13 @@
 
         }
 
+        #detail p {
+            font-size: clamp(14px, 4vw, 36px);
+            text-align: center;
+            max-width: 900px;
+            margin: 20px auto;
+        }
+
         #dates p {
             font-size: clamp(22px, 4.5vw, 36px);
             text-align: center;
@@ -226,7 +233,7 @@
             border-top: 1px solid #ccc;
         }
 
-        #organizers .organizer-outer {
+        #organizers .organizer-outer, #speakers .speaker-outer {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
@@ -237,9 +244,20 @@
             padding: 0 16px;
         }
 
-        #organizers .organizer-image {
+        #organizers .organizer-image, #speakers .speaker-image {
             text-align: center;
             flex: 0 0 240px;
+        }
+
+        #speakers img {
+            width: 100%;
+            max-width: 160px;
+            height: auto;
+            aspect-ratio: 3 / 4;
+            object-fit: cover;
+            border-radius: 50% / 35%;
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
         }
 
         #organizers img {
@@ -253,15 +271,24 @@
             transition: transform 0.2s;
         }
 
-        #organizers img:hover {
+        #organizers img:hover, #speakers img:hover {
             transform: scale(1.02);
         }
 
-        #organizers .organizer-intro {
+        #organizers .organizer-intro, #speakers .speaker-intro {
             line-height: 1.5;
             font-size: clamp(15px, 3vw, 20px);
             text-align: center;
             margin: 12px 0 4px;
+        }
+
+        #speakers p {
+            font-size: clamp(15px, 2.2vw, 19px);
+            text-align: justify;
+            flex: 1;
+            min-width: 260px;
+            max-width: 500px;
+            margin: 0;
         }
 
         #organizers p {
@@ -273,21 +300,92 @@
             margin: 0;
         }
 
-        .organizer-intro strong {
+        .organizer-intro strong, .speaker-intro strong {
             font-size: 28px;
         }
 
-        #organizers hr {
+        #organizers hr, #speakers hr {
             width: 90%;
             max-width: 1000px;
             margin: 20px auto;
         }
 
-        #topics, #submissions, #speakers, #members {
+        #topics, #dates, #program, #organizers {
             background-color: #f8f8f8;
         }
 
-        @media (max-width: 1024px) {
+        .table-wrapper {
+            width: 100%;
+            max-width: 1100px;
+            margin: 24px auto;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .simple-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: clamp(14px, 1.8vw, 16px);
+            line-height: 1.55;
+            background: #ffffff;
+        }
+
+        .simple-table th,
+        .simple-table td {
+            padding: 11px 16px;
+            text-align: center;
+            vertical-align: middle;
+            border-bottom: 1px solid #e6e6e6;
+        }
+
+        .simple-table th {
+            font-family: "Fjalla One", sans-serif;
+            font-weight: 600;
+            font-size: clamp(15px, 1.8vw, 17px);
+            color: #111111;
+            background: #f2f2f2;
+            white-space: nowrap;
+        }
+
+        .simple-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .simple-table tbody tr:hover {
+            background: #fafafa;
+        }
+
+        .paper-table th:first-child,
+        .paper-table td:first-child {
+            width: 55%;
+        }
+
+        .paper-table th:last-child,
+        .paper-table td:last-child {
+            width: 45%;
+        }
+
+        .pc-table th:first-child,
+        .pc-table td:first-child {
+            width: 20%;
+        }
+
+        .pc-table th:last-child,
+        .pc-table td:last-child {
+            width: 80%;
+        }
+
+        #program .program-subtitle {
+            font-family: "Fjalla One", sans-serif;
+            font-size: clamp(18px, 2.5vw, 24px);
+            text-align: center;
+            max-width: none;
+            margin: 0 auto 24px;
+            padding: 0;
+            color: #333333;
+        }
+
+        @media (max-width: 1095px) {
             .top-nav-index {
                 font-size: 15px;
                 padding: 4px 8px;
@@ -306,7 +404,7 @@
             }
         }
 
-        @media (max-width: 850px) {
+        @media (max-width: 870px) {
             nav {
                 gap: 4px;
                 padding: 8px 0;
@@ -330,12 +428,13 @@
             }
         }
 
-        @media (max-width: 710px) {
+        @media (max-width: 760px) {
             nav {
                 gap: 3px;
             }
 
             .top-nav-index {
+                font-size: 14px;
                 padding: 3px 6px;
             }
 
@@ -344,13 +443,13 @@
 
             }
 
-            #organizers .organizer-outer {
+            #organizers .organizer-outer, #speakers .speaker-outer {
                 flex-direction: column;
                 align-items: center;
                 gap: 20px;
             }
 
-            #organizers .organizer-image {
+            #organizers .organizer-image, #speakers .speaker-image {
                 flex: 0 0 auto;
             }
 
@@ -359,7 +458,7 @@
             }
 
             #dates p {
-                max-width: 480px;
+                max-width: 500px;
             }
 
             .section-title {
@@ -368,7 +467,7 @@
             }
         }
 
-        @media (max-width: 570px) {
+        @media (max-width: 615px) {
             .content p {
                 text-align: center;
             }
@@ -378,18 +477,33 @@
             }
 
             #dates p {
-                max-width: 400px;
+                max-width: 410px;
             }
         }
 
-        @media (max-width: 375px) {
+        @media (max-width: 500px) {
+            .top-nav-index {
+                font-size: 12px;
+            }
+
             .home-text {
                 font-size: 40px;
+            }
+
+            #speakers p {
+                max-width: 420px;
+                font-size: 15px;
             }
 
             #dates p {
                 max-width: 280px;
                 font-size: 18px;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .top-nav-index {
+                font-size: 12px;
             }
         }
 
@@ -405,6 +519,7 @@
         <li class="nav-item"><a class="top-nav-index active" href="#home">Home</a></li>
         <li class="nav-item"><a class="top-nav-index" href="#about">About</a></li>
         <li class="nav-item"><a class="top-nav-index" href="#topics">Topics</a></li>
+        <li class="nav-item"><a class="top-nav-index" href="#detail">Detail</a></li>
         <li class="nav-item"><a class="top-nav-index" href="#dates">Dates</a></li>
         <li class="nav-item"><a class="top-nav-index" href="#submissions">Submissions</a></li>
         <li class="nav-item"><a class="top-nav-index" href="#program">Program</a></li>
@@ -447,6 +562,7 @@
             interaction across data mining, machine learning, data management, information retrieval, and real-world
             application domains, and to highlight research that is both methodologically strong and practically useful.
         </p>
+        <p>EvoGraphDM is scheduled for Thursday, November 12, 2026, from 15:50 to 18:50 in Room Madrid.</p>
     </div>
 
     <div id="topics" class="section">
@@ -466,11 +582,19 @@
         </ul>
     </div>
 
+    <div id="detail" class="section">
+        <h1 class="section-title">Workshop Detail</h1>
+        <p>Date: <strong>Thursday, November 12, 2026</strong></p>
+        <p>Time: <strong>15:50–18:50</strong></p>
+        <p>Venue: <strong>Room Madrid</strong></p>
+        <p>Workshop ID: <strong>W24</strong></p>
+    </div>
+
     <div id="dates" class="section">
         <h1 class="section-title">Important Dates</h1>
-        <p class="p1">Workshop Paper Submission: <strong>August 20, 2026</strong></p>
+        <p>Workshop Paper Submission: <strong>August 20, 2026</strong></p>
         <hr>
-        <p class="p2">Notification of Acceptance: <strong>September 20, 2026</strong></p>
+        <p>Notification of Acceptance: <strong>September 20, 2026</strong></p>
         <hr>
         <p>Camera-ready Deadline and Copyright Form: TBA</p>
         <hr>
@@ -490,22 +614,64 @@
 
     <div id="program" class="section">
         <h1 class="section-title">Workshop Program</h1>
-<!--        <p>program</p>-->
-<!--        <hr>-->
-<!--        <p>program</p>-->
-<!--        <hr>-->
-<!--        <p>program</p>-->
-<!--        <hr>-->
-<!--        <p>program</p>-->
+        <p class="program-subtitle">Accepted and Registered Papers</p>
+        <div class="table-wrapper">
+            <table class="simple-table paper-table">
+                <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Authors</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>CC-Sketch: Collision-Calibrated Persistence Estimation in High-Speed Data Streams</td>
+                    <td>Taotao Xue</td>
+                </tr>
+                <tr>
+                    <td>Next Basket Recommendation with Dual Preference Graph for Price and Interest</td>
+                    <td>Jiaxu Wang, Qishan Feng, Ling Huang, Zhenyu Yang, Yuefang Gao, Chang-Dong Wang</td>
+                </tr>
+                <tr>
+                    <td>MCDG: Multi-dimensional Contrastive Learning for Continuous-time Dynamic Graph Representation
+                    </td>
+                    <td>Yu Xiao, Zhengyan Shi, Liu Yang, Yingting Li, Li Zhang</td>
+                </tr>
+                <tr>
+                    <td>A Per-Edge Diagnostic Framework for Continuous-Time Graph Learning</td>
+                    <td>Tobias Fritz, Gabi Dreo Rodosek</td>
+                </tr>
+                <tr>
+                    <td>Adaptive Synchronization Protocol for Structured Data in Active-Active Data Center
+                        Architecture
+                    </td>
+                    <td>Fei Peng, Tianyu An, Duoqin Wang, Qingdong Meng, Rui Ma, Shuneng Hu, Feng Zhang</td>
+                </tr>
+                <tr>
+                    <td>Agentic GraphRAG with Intent Decomposition for Scientific Resource Mining and Recommendation
+                    </td>
+                    <td>Wilson Ang Wei Zheng, Yanchun Sun, Sihan Wang, Hao Wen</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 
     <div id="speakers" class="section">
         <h1 class="section-title">Keynote Speakers</h1>
-<!--        <p>speakers</p>-->
-<!--        <hr>-->
-<!--        <p>speakers</p>-->
-<!--        <hr>-->
-<!--        <p>speakers</p>-->
+        <div class="speaker-outer">
+            <div class="speaker-image">
+                <img src="Chuxu Zhang.png" alt="Chuxu Zhang">
+                <p class="speaker-intro"><strong>Chuxu Zhang</strong></p>
+                <p class="speaker-intro">Computer Science University of Connecticut</p>
+            </div>
+            <p>
+                Chuxu Zhang is an Associate Professor of Computer Science at the University of Connecticut, USA. His
+                research interests include AI, large language models, graph machine learning, and agentic AI.
+                <br>
+                Website: https://chuxuzhang.github.io
+            </p>
+        </div>
     </div>
 
     <div id="organizers" class="section">
@@ -571,11 +737,150 @@
 
     <div id="members" class="section">
         <h1 class="section-title">PC Members</h1>
-<!--        <p>PC members</p>-->
-<!--        <hr>-->
-<!--        <p>PC members</p>-->
-<!--        <hr>-->
-<!--        <p>PC members</p>-->
+        <div class="table-wrapper">
+            <table class="simple-table pc-table">
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Affiliation</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Bingdao Feng</td>
+                    <td>Tianjin University</td>
+                </tr>
+                <tr>
+                    <td>Yuan Gao</td>
+                    <td>Nanjing University of Science and Technology</td>
+                </tr>
+                <tr>
+                    <td>Qintian Guo</td>
+                    <td>Beijing Institute of Technology, Zhuhai</td>
+                </tr>
+                <tr>
+                    <td>Dayu Hu</td>
+                    <td>Northeast University</td>
+                </tr>
+                <tr>
+                    <td>Cuiying Huo</td>
+                    <td>Tianjin University</td>
+                </tr>
+                <tr>
+                    <td>Wei Jia</td>
+                    <td>Anhui University of Technology</td>
+                </tr>
+                <tr>
+                    <td>De Li</td>
+                    <td>Guangxi Normal University</td>
+                </tr>
+                <tr>
+                    <td>Haoyang Li</td>
+                    <td>The Hong Kong Polytechnic University</td>
+                </tr>
+                <tr>
+                    <td>Ling Li</td>
+                    <td>Shanxi University</td>
+                </tr>
+                <tr>
+                    <td>Meng Li</td>
+                    <td>Nanjing University</td>
+                </tr>
+                <tr>
+                    <td>Xiaodong Li</td>
+                    <td>Xiamen University</td>
+                </tr>
+                <tr>
+                    <td>Yicong Li</td>
+                    <td>Nanjing University of Aeronautics and Astronautics</td>
+                </tr>
+                <tr>
+                    <td>Longlong Lin</td>
+                    <td>Southwest University</td>
+                </tr>
+                <tr>
+                    <td>Chenxi Liu</td>
+                    <td>Hong Kong Institute of Science &amp; Innovation, CAS</td>
+                </tr>
+                <tr>
+                    <td>Meng Liu</td>
+                    <td>Henan University</td>
+                </tr>
+                <tr>
+                    <td>Qi Luo</td>
+                    <td>Shandong University</td>
+                </tr>
+                <tr>
+                    <td>Xuexiong Luo</td>
+                    <td>Nanchang University</td>
+                </tr>
+                <tr>
+                    <td>Yuxuan Qiu</td>
+                    <td>Beijing Institute of Technology, Zhuhai</td>
+                </tr>
+                <tr>
+                    <td>Wenxuan Tu</td>
+                    <td>Hainan University</td>
+                </tr>
+                <tr>
+                    <td>Hancheng Wang</td>
+                    <td>Nanjing University</td>
+                </tr>
+                <tr>
+                    <td>Jiapu Wang</td>
+                    <td>Nanjing University of Science and Technology</td>
+                </tr>
+                <tr>
+                    <td>Yifan Wang</td>
+                    <td>University of International Business and Economics</td>
+                </tr>
+                <tr>
+                    <td>Yili Wang</td>
+                    <td>Jilin University</td>
+                </tr>
+                <tr>
+                    <td>Wei Wu</td>
+                    <td>Central South University</td>
+                </tr>
+                <tr>
+                    <td>Xunlian Wu</td>
+                    <td>Zhengzhou University</td>
+                </tr>
+                <tr>
+                    <td>Yuhan Wu</td>
+                    <td>Zhejiang Sci-Tech University</td>
+                </tr>
+                <tr>
+                    <td>Jingge Xiao</td>
+                    <td>L3S Research Center</td>
+                </tr>
+                <tr>
+                    <td>Jiaqiang Zhang</td>
+                    <td>Nanjing University of Information Science and Technology</td>
+                </tr>
+                <tr>
+                    <td>Qi Zhang</td>
+                    <td>University of Science and Technology Beijing</td>
+                </tr>
+                <tr>
+                    <td>Wei Zhang</td>
+                    <td>Leibniz University Hannover</td>
+                </tr>
+                <tr>
+                    <td>Zijia Zhang</td>
+                    <td>Hubei University</td>
+                </tr>
+                <tr>
+                    <td>Tianqi Zhao</td>
+                    <td>Delft University of Technology</td>
+                </tr>
+                <tr>
+                    <td>Yifan Zhu</td>
+                    <td>Beijing University of Posts and Telecommunications</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
 
