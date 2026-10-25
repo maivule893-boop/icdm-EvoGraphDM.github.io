@@ -282,16 +282,7 @@
             margin: 12px 0 4px;
         }
 
-        #speakers p {
-            font-size: clamp(15px, 2.2vw, 19px);
-            text-align: justify;
-            flex: 1;
-            min-width: 260px;
-            max-width: 500px;
-            margin: 0;
-        }
-
-        #organizers p {
+        #speakers p, #organizers p {
             font-size: clamp(15px, 2.2vw, 19px);
             text-align: justify;
             flex: 1;
@@ -383,6 +374,18 @@
             margin: 0 auto 24px;
             padding: 0;
             color: #333333;
+        }
+
+        #speakers .keynote-title {
+            font-family: "Fjalla One", sans-serif;
+            font-size: clamp(20px, 3vw, 28px);
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto 36px;
+            padding: 0 12px;
+            color: #111111;
+            font-weight: 600;
+            line-height: 1.35;
         }
 
         @media (max-width: 1095px) {
@@ -488,11 +491,6 @@
 
             .home-text {
                 font-size: 40px;
-            }
-
-            #speakers p {
-                max-width: 420px;
-                font-size: 15px;
             }
 
             #dates p {
@@ -625,10 +623,6 @@
                 </thead>
                 <tbody>
                 <tr>
-                    <td>CC-Sketch: Collision-Calibrated Persistence Estimation in High-Speed Data Streams</td>
-                    <td>Taotao Xue</td>
-                </tr>
-                <tr>
                     <td>Next Basket Recommendation with Dual Preference Graph for Price and Interest</td>
                     <td>Jiaxu Wang, Qishan Feng, Ling Huang, Zhenyu Yang, Yuefang Gao, Chang-Dong Wang</td>
                 </tr>
@@ -652,6 +646,10 @@
                     </td>
                     <td>Wilson Ang Wei Zheng, Yanchun Sun, Sihan Wang, Hao Wen</td>
                 </tr>
+                <tr>
+                    <td>CC-Sketch: Collision-Calibrated Persistence Estimation in High-Speed Data Streams</td>
+                    <td>Taotao Xue</td>
+                </tr>
                 </tbody>
             </table>
         </div>
@@ -659,17 +657,22 @@
 
     <div id="speakers" class="section">
         <h1 class="section-title">Keynote Speakers</h1>
+        <p class="keynote-title">Graph-Structured Intelligence for LLMs and Agentic Systems</p>
         <div class="speaker-outer">
             <div class="speaker-image">
                 <img src="Chuxu Zhang.png" alt="Chuxu Zhang">
                 <p class="speaker-intro"><strong>Chuxu Zhang</strong></p>
-                <p class="speaker-intro">Computer Science University of Connecticut</p>
+                <p class="speaker-intro">University of Connecticut</p>
             </div>
             <p>
-                Chuxu Zhang is an Associate Professor of Computer Science at the University of Connecticut, USA. His
-                research interests include AI, large language models, graph machine learning, and agentic AI.
-                <br>
-                Website: https://chuxuzhang.github.io
+                Chuxu Zhang is a tenured Associate Professor of Computer Science and Engineering at the University of
+                Connecticut, USA, and Director of the MINDS Lab. He earned his Ph.D. from the University of Notre Dame
+                in 2020. His research spans large language models, graph machine learning, and agentic AI, with a
+                particular focus on building efficient and trustworthy AI systems for healthcare and industrial
+                applications. His work has been published at leading conferences, including NeurIPS, ICML, KDD, and ACL.
+                He received both the NSF CAREER Award and the Frontiers of Science Award in 2024. He also contributes to
+                the research community as an area chair for major AI conferences and an editor for journals in machine
+                learning and data mining.
             </p>
         </div>
     </div>
