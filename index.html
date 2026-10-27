@@ -346,15 +346,15 @@
             background: #fafafa;
         }
 
-        .paper-table th:first-child,
-        .paper-table td:first-child {
-            width: 55%;
+        .schedule-table th:first-child,
+        .schedule-table td:first-child {
+            width: 22%;
+            white-space: nowrap;
         }
 
-        .paper-table th:last-child,
-        .paper-table td:last-child {
-            width: 45%;
-        }
+        .schedule-table th:last-child,
+        .schedule-table td:last-child {
+            width: 78%;
 
         .pc-table th:first-child,
         .pc-table td:first-child {
@@ -510,8 +510,8 @@
         }
     </style>
 </head>
+    
 <body>
-
 <div class="top-nav">
     <nav class="nav">
         <li class="nav-item"><a class="top-nav-index active" href="#home">Home</a></li>
@@ -610,50 +610,90 @@
         </p>
     </div>
 
-    <div id="program" class="section">
-        <h1 class="section-title">Workshop Program</h1>
-        <p class="program-subtitle">Accepted and Registered Papers</p>
-        <div class="table-wrapper">
-            <table class="simple-table paper-table">
-                <thead>
-                <tr>
-                    <th>Title</th>
-                    <th>Authors</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>Next Basket Recommendation with Dual Preference Graph for Price and Interest</td>
-                    <td>Jiaxu Wang, Qishan Feng, Ling Huang, Zhenyu Yang, Yuefang Gao, Chang-Dong Wang</td>
-                </tr>
-                <tr>
-                    <td>MCDG: Multi-dimensional Contrastive Learning for Continuous-time Dynamic Graph Representation
-                    </td>
-                    <td>Yu Xiao, Zhengyan Shi, Liu Yang, Yingting Li, Li Zhang</td>
-                </tr>
-                <tr>
-                    <td>A Per-Edge Diagnostic Framework for Continuous-Time Graph Learning</td>
-                    <td>Tobias Fritz, Gabi Dreo Rodosek</td>
-                </tr>
-                <tr>
-                    <td>Adaptive Synchronization Protocol for Structured Data in Active-Active Data Center
-                        Architecture
-                    </td>
-                    <td>Fei Peng, Tianyu An, Duoqin Wang, Qingdong Meng, Rui Ma, Shuneng Hu, Feng Zhang</td>
-                </tr>
-                <tr>
-                    <td>Agentic GraphRAG with Intent Decomposition for Scientific Resource Mining and Recommendation
-                    </td>
-                    <td>Wilson Ang Wei Zheng, Yanchun Sun, Sihan Wang, Hao Wen</td>
-                </tr>
-                <tr>
-                    <td>CC-Sketch: Collision-Calibrated Persistence Estimation in High-Speed Data Streams</td>
-                    <td>Taotao Xue</td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
+	<div id="program" class="section">
+	    <h1 class="section-title">Workshop Program</h1>
+	    <p>
+	        EvoGraphDM will be held on Thursday, November 12, 2026, from 15:50 to 18:50 in Room Madrid. The program
+	        includes an opening introduction, a keynote speech, technical paper presentations, and the best paper award
+	        announcement. The detailed schedule is as follows.
+	    </p>
+	    <div class="table-wrapper">
+	        <table class="simple-table schedule-table">
+	            <thead>
+	            <tr>
+	                <th>Time</th>
+	                <th>Session</th>
+	            </tr>
+	            </thead>
+	            <tbody>
+	            <tr>
+	                <td class="time-col">15:50–16:10</td>
+	                <td>
+	                    <strong>Workshop Opening and Introduction</strong><br>
+	                    Workshop organizers introduce the workshop's background, objectives, research themes, and paper
+	                    award evaluation criteria.
+	                </td>
+	            </tr>
+	            <tr>
+	                <td class="time-col">16:10–16:40</td>
+	                <td>
+	                    <strong>Keynote Speech</strong><br>
+	                    Speaker: Chuxu Zhang, University of Connecticut<br>
+	                    Title: Graph-Structured Intelligence for LLMs and Agentic Systems
+	                </td>
+	            </tr>
+	            <tr>
+	                <td class="time-col">16:40–17:00</td>
+	                <td>
+	                    <strong>Next Basket Recommendation with Dual Preference Graph for Price and Interest</strong><br>
+	                    Authors: Jiaxu Wang, Qishan Feng, Ling Huang, Zhenyu Yang, Yuefang Gao, Chang-Dong Wang
+	                </td>
+	            </tr>
+	            <tr>
+	                <td class="time-col">17:00–17:20</td>
+	                <td>
+	                    <strong>MCDG: Multi-dimensional Contrastive Learning for Continuous-time Dynamic Graph Representation</strong><br>
+	                    Authors: Yu Xiao, Zhengyan Shi, Liu Yang, Yingting Li, Li Zhang
+	                </td>
+	            </tr>
+	            <tr>
+	                <td class="time-col">17:20–17:40</td>
+	                <td>
+	                    <strong>A Per-Edge Diagnostic Framework for Continuous-Time Graph Learning</strong><br>
+	                    Authors: Tobias Fritz, Gabi Dreo Rodosek
+	                </td>
+	            </tr>
+	            <tr>
+	                <td class="time-col">17:40–18:00</td>
+	                <td>
+	                    <strong>Adaptive Synchronization Protocol for Structured Data in Active-Active Data Center Architecture</strong><br>
+	                    Authors: Fei Peng, Tianyu An, Duoqin Wang, Qingdong Meng, Rui Ma, Shuneng Hu, Feng Zhang
+	                </td>
+	            </tr>
+	            <tr>
+	                <td class="time-col">18:00–18:20</td>
+	                <td>
+	                    <strong>Agentic GraphRAG with Intent Decomposition for Scientific Resource Mining and Recommendation</strong><br>
+	                    Authors: Wilson Ang Wei Zheng, Yanchun Sun, Sihan Wang, Hao Wen
+	                </td>
+	            </tr>
+	            <tr>
+	                <td class="time-col">18:20–18:40</td>
+	                <td>
+	                    <strong>CC-Sketch: Collision-Calibrated Persistence Estimation in High-Speed Data Streams</strong><br>
+	                    Author: Taotao Xue
+	                </td>
+	            </tr>
+	            <tr>
+	                <td class="time-col">18:40–18:50</td>
+	                <td>
+	                    <strong>Best Paper Awards Announcement &amp; Closing Remarks</strong>
+	                </td>
+	            </tr>
+	            </tbody>
+	        </table>
+	    </div>
+	</div>
 
     <div id="speakers" class="section">
         <h1 class="section-title">Keynote Speakers</h1>
